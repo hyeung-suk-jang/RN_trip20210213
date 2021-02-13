@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "267003990237",
+    "firebase_url": "https://findpcroom-f0e38.firebaseio.com",
+    "project_id": "findpcroom-f0e38",
+    "storage_bucket": "findpcroom-f0e38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267003990237:android:e3adea7d65d9acf4",
+        "android_client_info": {
+          "package_name": "com.s2d5.a2019findpcroom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267003990237-efp4cjbgkq0r2dai6mil9en92k7olrbv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLsYyW1v-nlrTItaR7h4RT3YgIBKFOHko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267003990237-efp4cjbgkq0r2dai6mil9en92k7olrbv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "267003990237-9oc782oshrvv3dksjaabbljd5frs5od6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.s2d5.a2019findpcroom"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267003990237:android:824607a9ac75d41d5dcb34",
+        "android_client_info": {
+          "package_name": "com.tripsoda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267003990237-efp4cjbgkq0r2dai6mil9en92k7olrbv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLsYyW1v-nlrTItaR7h4RT3YgIBKFOHko"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267003990237-efp4cjbgkq0r2dai6mil9en92k7olrbv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "267003990237-9oc782oshrvv3dksjaabbljd5frs5od6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.s2d5.a2019findpcroom"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
