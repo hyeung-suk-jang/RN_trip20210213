@@ -76,6 +76,17 @@ if(token){
     
   }, []);
 
+  const SettingsStack = createStackNavigator();
+
+  function ChatStackScreen() {
+    return (
+      <SettingsStack.Navigator>
+        <SettingsStack.Screen name="Message" component={Message} />
+        <SettingsStack.Screen name="Chat" component={Chat} />
+      </SettingsStack.Navigator>
+    );
+  }
+
   return (
     <Provider store={store}>
       <NavigationContainer>
@@ -163,8 +174,8 @@ if(token){
       <Tab.Screen name="Home" component={Tab_home} />
       <Tab.Screen name="Schedule" component={Schedule} />
       <Tab.Screen name="Map" component={Map} />
-      <Tab.Screen name="Message" component={Message} />
-      <Tab.Screen name="Setting" component={Setting} />
+      <Tab.Screen name="Message" component={ChatStackScreen} />
+      <Tab.Screen name="Setting" component={Setting} /> 
       </Tab.Navigator>
     }
   </NavigationContainer>
