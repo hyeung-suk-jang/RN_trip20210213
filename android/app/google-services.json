@@ -1,41 +1,49 @@
 {
   "project_info": {
-    "project_number": "267003990237",
-    "firebase_url": "https://findpcroom-f0e38.firebaseio.com",
-    "project_id": "findpcroom-f0e38",
-    "storage_bucket": "findpcroom-f0e38.appspot.com"
+    "project_number": "665786023149",
+    "firebase_url": "https://login-5f42c.firebaseio.com",
+    "project_id": "login-5f42c",
+    "storage_bucket": "login-5f42c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:267003990237:android:e3adea7d65d9acf4",
+        "mobilesdk_app_id": "1:665786023149:android:a38be9ac0305b4f52b20e4",
         "android_client_info": {
-          "package_name": "com.s2d5.a2019findpcroom"
+          "package_name": "com.example.parapara"
         }
       },
       "oauth_client": [
         {
-          "client_id": "267003990237-efp4cjbgkq0r2dai6mil9en92k7olrbv.apps.googleusercontent.com",
+          "client_id": "665786023149-qgk42ijb7d9cvkem8uq9smrcoqtn0q6o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.parapara",
+            "certificate_hash": "9e8150ea7f319ad224304f36399e81867ea70919"
+          }
+        },
+        {
+          "client_id": "665786023149-4ot8kdp5b94r8fe82523f42tv0pkqlp7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDLsYyW1v-nlrTItaR7h4RT3YgIBKFOHko"
+          "current_key": "AIzaSyDE4uDgB9UyECsJ9mtfwKXQI_VCXyWDG1g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "267003990237-efp4cjbgkq0r2dai6mil9en92k7olrbv.apps.googleusercontent.com",
+              "client_id": "665786023149-4ot8kdp5b94r8fe82523f42tv0pkqlp7.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "267003990237-9oc782oshrvv3dksjaabbljd5frs5od6.apps.googleusercontent.com",
+              "client_id": "665786023149-764g14678rfbo09j43dgn8dh0fgjcmbr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.s2d5.a2019findpcroom"
+                "bundle_id": "com.azanghs.iphonestudy"
               }
             }
           ]
@@ -44,34 +52,34 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:267003990237:android:824607a9ac75d41d5dcb34",
+        "mobilesdk_app_id": "1:665786023149:android:4ab4b6d1fe971ac72b20e4",
         "android_client_info": {
           "package_name": "com.tripsoda"
         }
       },
       "oauth_client": [
         {
-          "client_id": "267003990237-efp4cjbgkq0r2dai6mil9en92k7olrbv.apps.googleusercontent.com",
+          "client_id": "665786023149-4ot8kdp5b94r8fe82523f42tv0pkqlp7.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDLsYyW1v-nlrTItaR7h4RT3YgIBKFOHko"
+          "current_key": "AIzaSyDE4uDgB9UyECsJ9mtfwKXQI_VCXyWDG1g"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "267003990237-efp4cjbgkq0r2dai6mil9en92k7olrbv.apps.googleusercontent.com",
+              "client_id": "665786023149-4ot8kdp5b94r8fe82523f42tv0pkqlp7.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "267003990237-9oc782oshrvv3dksjaabbljd5frs5od6.apps.googleusercontent.com",
+              "client_id": "665786023149-764g14678rfbo09j43dgn8dh0fgjcmbr.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.s2d5.a2019findpcroom"
+                "bundle_id": "com.azanghs.iphonestudy"
               }
             }
           ]

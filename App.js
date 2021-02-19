@@ -1,4 +1,4 @@
-import React,{ useEffect,useState }  from 'react';
+import React,{ useEffect,useState,useContext }  from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -16,6 +16,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from "./screens/Home";
 import Login from './screens/Login';
+import FirebaseLogin from './screens/FirebaseLogin';
+import FirebaseSignup from './screens/FirebaseSignup';
 import Join from './screens/Join';
 import SearchPW from './screens/SearchPW';
 import Main from './screens/Main';
@@ -38,46 +40,33 @@ import 'react-native-gesture-handler';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import TabBarIcon from './screens/TabBarIcon'
 
+import auth from '@react-native-firebase/auth';
+
 const store = createStore(reducers, applyMiddleware(reduxThunk));
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
-
 const App = () => {
-//로그인 여부.
-const [token, setToken] = useState('');
-    
-const _retrieveData = async () => {
-  try {
-    const value = await AsyncStorage.getItem('usertoken');
-    if (value !== null) {
-      //console.log(value);
-      setToken(value)
 
-    }
-  } catch (error) {
-    // Error retrieving data
+  const [user, setUser] = useState(null);
+
+  function onAuthStateChanged(user) {
+    console.log(user,'///data');
+    setUser(user);
   }
-};
 
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber;
+  }, []);
 
-  //const token = AsyncStorage.getItem('usertoken');
-if(token){
-  console.log(token)
-}else{
-  console.log('토큰이 없습니다.')
-}
-
-//스크린 이미지를 3초후에 종료.
   useEffect(() => {
     setTimeout(function(){
       SplashScreen.hide();
     },3000);
-    
   }, []);
 
   const SettingsStack = createStackNavigator();
-
   function ChatStackScreen() {
     return (
       <SettingsStack.Navigator>
@@ -90,99 +79,110 @@ if(token){
   return (
     <Provider store={store}>
       <NavigationContainer>
-        {token ?
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} options={{
-              headerShown: false,
-            }}/>
-      <Stack.Screen name="SearchPW" component={SearchPW} options={{
-             headerTitle:'비밀번호 찾기',
-             headerStyle: {
-               backgroundColor: '#41BD40',
-             },
-             headerTintColor: '#fff',
-             headerTitleStyle: {
-               fontWeight: 'bold',
-               fontSize:30,
-               alignSelf: 'center' ,
-             },
-             headerRight: () => (
-               <View></View>
+        {user === null ?
+          <Stack.Navigator>
+            {/* <Stack.Screen name="Login" component={Login} options={{
+                  headerTitle:'로그인',
+                  headerStyle: {
+                    backgroundColor: '#41BD40',
+                  },
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                    fontSize:30,
+                    alignSelf: 'center' ,
+                  },
+                  headerRight: () => (
+                    <View></View>
+                  ),
+                  }}/> */}
+              <Stack.Screen name="FirebaseLogin" component={FirebaseLogin} options={{
+                  headerTitle:'로그인',
+                  headerStyle: {
+                    backgroundColor: '#41BD40',
+                  },
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                    fontSize:30,
+                    alignSelf: 'center' ,
+                  },
+                  headerRight: () => (
+                    <View></View>
+                  ),
+                  }}/> 
+         
+                 <Stack.Screen name="FirebaseSignup" component={FirebaseSignup} options={{
+                  headerTitle:'로그인',
+                  headerStyle: {
+                    backgroundColor: '#41BD40',
+                  },
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                    fontSize:30,
+                    alignSelf: 'center' ,
+                  },
+                  headerRight: () => (
+                    <View></View>
+                  ),
+                  }}/>                 
+            <Stack.Screen name="Home" component={Home} options={{
+                    headerShown: false,
+                  }}/>
+            <Stack.Screen name="SearchPW" component={SearchPW} options={{
+                  headerTitle:'비밀번호 찾기',
+                  headerStyle: {
+                    backgroundColor: '#41BD40',
+                  },
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                    fontSize:30,
+                    alignSelf: 'center' ,
+                  },
+                  headerRight: () => (
+                    <View></View>
+                  ),
+                  }}/>
+            <Stack.Screen name="Join" component={Join} 
+                options={{
+                  headerTitle:'회원가입',
+                  headerStyle: {
+                    backgroundColor: '#41BD40',
+                  },
+                  headerTintColor: '#fff',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                    alignSelf: 'center' ,
+                  },
+                  headerRight: () => (
+                    <View></View>
+                ),
+                }}/>
+             </Stack.Navigator>    
+      : 
+      <Tab.Navigator
+          screenOptions={({route})=> ({
+            tabBarIcon : ({focused,color}) => (
+              TabBarIcon(route.name, color, focused)
             ),
-            }}/>
-      <Stack.Screen name="Login" component={Login} options={{
-             headerTitle:'로그인',
-             headerStyle: {
-               backgroundColor: '#41BD40',
-             },
-             headerTintColor: '#fff',
-             headerTitleStyle: {
-               fontWeight: 'bold',
-               fontSize:30,
-               alignSelf: 'center' ,
-             },
-             headerRight: () => (
-               <View></View>
-            ),
-            }}/>
-      <Stack.Screen name="Join" component={Join} 
-       options={{
-        headerTitle:'회원가입',
-        headerStyle: {
-          backgroundColor: '#41BD40',
-        },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: 'bold',
-          alignSelf: 'center' ,
-        },
-        headerRight: () => (
-          <View></View>
-       ),
-       }}/>
-
-       <Stack.Screen name="Chat" component={Chat} 
-        options={{
-          headerTitle:'회원가입',
-          headerStyle: {
-            backgroundColor: '#41BD40',
-          },
-          headerTintColor: '#fff',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-            alignSelf: 'center',
-          },
-          headerRight: () => (
-            <View></View>
-          ),
-        }}
-       />
-    </Stack.Navigator>
-    : 
-    <Tab.Navigator
-        screenOptions={({route})=> ({
-          tabBarIcon : ({focused,color}) => (
-            TabBarIcon(route.name, color, focused)
-          ),
-          
-        })
-      }
-      tabBarOptions= {{
-        showLabel: false
-    }}
-      >
-      <Tab.Screen name="Home" component={Tab_home} />
-      <Tab.Screen name="Schedule" component={Schedule} />
-      <Tab.Screen name="Map" component={Map} />
-      <Tab.Screen name="Message" component={ChatStackScreen} />
-      <Tab.Screen name="Setting" component={Setting} /> 
+            
+          })
+        }
+        tabBarOptions= {{
+          showLabel: false
+      }} >
+        <Tab.Screen name="Home" component={Tab_home} />
+        <Tab.Screen name="Schedule" component={Schedule} />
+        <Tab.Screen name="Map" component={Map} />
+        <Tab.Screen name="Message" component={ChatStackScreen} />
+        <Tab.Screen name="Setting" component={Setting} /> 
       </Tab.Navigator>
     }
   </NavigationContainer>
     </Provider>
   );
-
-
 };
 
 const styles = StyleSheet.create({
@@ -206,6 +206,4 @@ const styles = StyleSheet.create({
     backgroundColor:'white'
   }
 });
-
-
 export default App;

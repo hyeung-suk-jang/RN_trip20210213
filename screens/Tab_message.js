@@ -1,10 +1,24 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { View, Text ,Alert,TextInput,StyleSheet,TouchableOpacity,ScrollView} from 'react-native';
 import {Badge, Avatar, Input} from 'react-native-elements';
 import Close from '../assets/close';
 import SearchIcon from '../assets/search';
+import auth from '@react-native-firebase/auth';
 
 const Tab_message = ({ navigation }) => {
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+      if (user === null) {
+        auth().onAuthStateChanged(onAuthStateChanged)
+      }
+  });
+
+  function onAuthStateChanged(user) {
+    console.log(user.uid,'///user-uuid');
+    setUser(user);
+  }
 
   const userList = [
     {

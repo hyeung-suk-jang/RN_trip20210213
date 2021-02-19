@@ -10,13 +10,15 @@ import {
 import {URL} from '../constant';
 import {useDispatch, useSelector} from 'react-redux';
 import {loginAction} from '../actions/userAction';
+import auth from '@react-native-firebase/auth';
 
 const initialValue = {
   id: '',
   pw: '',
 };
 
-const Login = ({navigation}) => {
+const FirebaseLogin = ({navigation}) => {
+
   const [userid, setUserid] = useState('');
   const [userpw, setUserpw] = useState('');
   const [errorID, setErrorID] = useState(false);
@@ -31,22 +33,26 @@ const Login = ({navigation}) => {
     navigation.navigate('SearchPW');
   };
   const _loginProc = () => {
-    console.log(userid);
-
     if (userid == '') {
-      //Alert.alert('이메일을 입력해주세요.');
       setErrorID(true);
       idInput.current.focus();
       return;
     }
     if (userpw == '') {
-      //Alert.alert('패스워드를 입력해주세요.');
       setErrorPW(true);
       passInput.current.focus();
       return;
     }
+    callLogin(userid,userpw)
+  };
 
-    dispatch(loginAction({userid: userid, userpw: userpw}));
+  async function callLogin(email,password) {
+      auth()
+      .signInWithEmailAndPassword(email, password).then((user) => {
+        console.log(user,'///utm');
+      }).catch((error) => {
+        console.log(error,'///utm');
+      })
   };
 
   const _onchangeTxt = (txt) => {
@@ -57,11 +63,12 @@ const Login = ({navigation}) => {
     setUserpw(txt);
     setErrorPW(false);
   };
+
   return (
     <View style={styles.container}>
       <TextInput
         style={[styles.inputbox_id, errorID && styles.error_inputbox]}
-        placeholder="UserID"
+        placeholder="Enter Email"
         ref={idInput}
         onChangeText={(userid) => _onchangeTxt(userid)}
         defaultValue={userid}
@@ -73,9 +80,8 @@ const Login = ({navigation}) => {
       </View>
       <TextInput
         style={[styles.inputbox_pw, errorPW && styles.error_inputbox]}
-        placeholder="Password"
+        placeholder="Enter Password"
         ref={passInput}
-        //onChangeText={userpw => setUserpw(userpw)}
         onChangeText={(userpw) => _onchangePW(userpw)}
         defaultValue={userpw}
         secureTextEntry={true}
@@ -103,6 +109,15 @@ const Login = ({navigation}) => {
         }}>
         <Text style={styles.roundButton1}>확인</Text>
       </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.touchmargin}
+        onPress={() => {
+          navigation.navigate("FirebaseSignup")
+        }}>
+        <Text style={styles.roundButton1}>SignUp</Text>
+      </TouchableOpacity>
+
     </View>
   );
 };
@@ -170,4 +185,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default FirebaseLogin;

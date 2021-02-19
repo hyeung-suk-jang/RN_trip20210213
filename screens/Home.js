@@ -1,9 +1,21 @@
-import * as React from 'react';
+import React,{ useEffect,useState,useContext }  from 'react';
 import { View, Text ,StyleSheet,TouchableOpacity} from 'react-native';
-
-
+import auth from '@react-native-firebase/auth';
 
 const Home = ({ navigation }) => {
+
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+      if (user === null) {
+        auth().onAuthStateChanged(onAuthStateChanged)
+      }
+  });
+
+  function onAuthStateChanged(user) {
+    console.log(user.uid,'///user-uuid');
+    setUser(user);
+  }
 
     return (
         <View style={styles.container}>
