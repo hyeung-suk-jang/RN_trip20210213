@@ -99,7 +99,7 @@ const Login = ({navigation}) => {
         onPress={() => {
           //navigation.navigate("Join")
           //서버통신
-          _loginProc();
+          _loginProc()
         }}>
         <Text style={styles.roundButton1}>확인</Text>
       </TouchableOpacity>
