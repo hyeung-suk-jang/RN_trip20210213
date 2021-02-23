@@ -8,7 +8,8 @@ import {
   Text,
   StatusBar,
   Styled,
-  TouchableOpacity
+  TouchableOpacity,
+  Alert
 } from 'react-native';
 
 import SplashScreen from 'react-native-splash-screen'
@@ -39,7 +40,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import 'react-native-gesture-handler';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import TabBarIcon from './screens/TabBarIcon'
-
+import messaging from '@react-native-firebase/messaging';
 import auth from '@react-native-firebase/auth';
 
 const store = createStore(reducers, applyMiddleware(reduxThunk));
@@ -59,6 +60,20 @@ const App = () => {
     const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
     return subscriber;
   }, []);
+
+  useEffect(() => {
+
+    //when app is open
+     messaging().onMessage(async remoteMessage => {
+      Alert.alert('A new  message arrived!', JSON.stringify(remoteMessage));
+    })
+
+    //notification when app is quit or on background
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+      Alert.alert('Message handled in the background!', remoteMessage);
+    })
+
+  ,[]})
 
   useEffect(() => {
     setTimeout(function(){

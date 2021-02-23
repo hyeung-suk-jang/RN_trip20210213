@@ -3,6 +3,8 @@ import { View, Text ,Alert,TextInput,StyleSheet,TouchableOpacity} from 'react-na
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+
+
 import Tab_home from './Tab_home';
 import Schedule from './Tab_schedule';
 import Map from './Tab_map';
@@ -15,6 +17,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 const Tab = createBottomTabNavigator();
 
 const Main = ({ navigation }) =>  {
+
+  
+
+  
+
   return (
     <Tab.Navigator
         screenOptions={({route})=> ({

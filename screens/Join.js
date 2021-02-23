@@ -82,7 +82,7 @@ const Join = ({ navigation }) => {
           <TouchableOpacity style={styles.touchmargin} onPress={() => {
              //navigation.navigate("Join")
             //서버통신 
-            _loginProc()
+            _joinProc()
                   }}>
               <Text style={styles.roundButton1}>확인</Text>
               </TouchableOpacity>
