@@ -4,6 +4,7 @@ import {Badge, Avatar, Input} from 'react-native-elements';
 import Close from '../assets/close';
 import SearchIcon from '../assets/search';
 import auth from '@react-native-firebase/auth';
+import {COLORS} from '../constant/colors';
 
 const Tab_message = ({ navigation }) => {
 
@@ -47,13 +48,14 @@ const Tab_message = ({ navigation }) => {
   if (userList.length > 0) {
     renderCards = userList.map((data, key) => {
       return (
-          <TouchableOpacity style={styles.mainContainer} 
-            onPress={() => {
-                //console.log(data.name);
-                 navigation.navigate("Chat")
-            }}
+          <View style={styles.mainContainer} 
           >
-            <View style={{width: '20%', flexDirection: 'column', justifyContent : 'center'}}>
+            <TouchableOpacity 
+              style={{width: '20%', flexDirection: 'column', justifyContent : 'center'}}
+              onPress={() => {
+                 navigation.navigate("ChatProfile")
+              }}
+            >
               <Avatar
                 rounded
                 source={
@@ -81,9 +83,14 @@ const Tab_message = ({ navigation }) => {
                     right: 6,
                   }}
               />
-            </View>
+            </TouchableOpacity>
 
-            <View style={{width: '60%'}}>
+            <TouchableOpacity 
+              style={{width: '60%'}}
+              onPress={() => {
+                 navigation.navigate("Chat")
+              }}
+            >
               <View style={{flexDirection: 'row'}}>
                 <Text style={styles.nameTaxtStyle}>{data.name}</Text>
               </View>
@@ -94,7 +101,7 @@ const Tab_message = ({ navigation }) => {
                 }}>
                 <Text numberOfLines={1}>{data.message}</Text>
               </View>
-            </View>
+            </TouchableOpacity>
 
             <View style={{width: '20%', alignItems: 'center', marginTop : 4 }}>
                 <Text style={{ fontSize : 10 }}>10:00AM</Text>
@@ -112,7 +119,7 @@ const Tab_message = ({ navigation }) => {
                   </View>  
                 }
             </View>
-          </TouchableOpacity>
+          </View>
       );
     });
   }
@@ -162,7 +169,7 @@ const styles = StyleSheet.create({
   nameTaxtStyle: {
     fontWeight: '500',
     fontSize: 18,
-    color: '#14C16B',
+    color: COLORS.GREY,
   },
   mainContainer2: {
         width: '94%',

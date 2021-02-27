@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, StyleSheet, Image, Text } from 'react-native';
+import { View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
 
-const DetailSchedule = ({name}) => {
+const DetailSchedule = ({name,onItemClick}) => {
 
     let path = `../assets/pics/${name}`;
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container}
+            onPress={onItemClick}
+        >
             <View style={{flexDirection:'row'}}>
                 <Text style={{fontSize:20}}>영월역</Text>
                 <Text style={{marginLeft: 10, marginTop:5}}> 7/9 - AM : 9 : 00</Text>
@@ -18,7 +20,7 @@ const DetailSchedule = ({name}) => {
                 <Image
                     source={require('../assets/image/schedule_image1.png')}/>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
