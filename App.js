@@ -8,8 +8,7 @@ import {
   Text,
   StatusBar,
   Styled,
-  TouchableOpacity,
-  Alert
+  TouchableOpacity
 } from 'react-native';
 
 import SplashScreen from 'react-native-splash-screen'
@@ -40,8 +39,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import 'react-native-gesture-handler';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import TabBarIcon from './screens/TabBarIcon'
+
 import messaging from '@react-native-firebase/messaging';
 import auth from '@react-native-firebase/auth';
+
+import Test from './screens/Test'
+
+import Toast from 'react-native-simple-toast';
 
 const store = createStore(reducers, applyMiddleware(reduxThunk));
 const Stack = createStackNavigator();
@@ -62,24 +66,27 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-
-    //when app is open
-     messaging().onMessage(async remoteMessage => {
-      Alert.alert('A new  message arrived!', JSON.stringify(remoteMessage));
-    })
-
-    //notification when app is quit or on background
-    messaging().setBackgroundMessageHandler(async remoteMessage => {
-      Alert.alert('Message handled in the background!', remoteMessage);
-    })
-
-  ,[]})
-
-  useEffect(() => {
     setTimeout(function(){
       SplashScreen.hide();
     },3000);
   }, []);
+
+  useEffect(() => {
+
+    //when app is open
+     messaging().onMessage(async remoteMessage => {
+
+      Toast.showWithGravity('A new  message arrived!', Toast.LONG, Toast.TOP);
+    
+      // Alert.alert('A new  message arrived!', JSON.stringify(remoteMessage));
+    })
+
+    //notification when app is quit or on background
+    messaging().setBackgroundMessageHandler(async remoteMessage => {
+      console.log('Message handled in the background!', remoteMessage);
+    })
+
+},[])
 
   const SettingsStack = createStackNavigator();
   function ChatStackScreen() {
