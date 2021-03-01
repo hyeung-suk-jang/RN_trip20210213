@@ -13,7 +13,10 @@ import Icon from 'react-native-vector-icons/dist/AntDesign';
 const Header = (props) => {
   return (
     <View style={Styles.mainContainer}>
-      <StatusBar hidden = {true}/>
+            <StatusBar
+                backgroundColor='white'
+                barStyle='dark-content'
+            />
       <TouchableOpacity
         style={{marginLeft: 0, paddingLeft : 8, width : width * 0.2 }}
         onPress={props.onBackPress}

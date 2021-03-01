@@ -66,7 +66,10 @@ const AudioGuide = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <StatusBar translucent backgroundColor={COLORS.PRIMARY} />
+      <StatusBar
+                backgroundColor='white'
+                barStyle='dark-content'
+            />
 
       <View style={styles.headerContainer}>
         <TouchableOpacity
