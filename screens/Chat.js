@@ -11,8 +11,8 @@ export default class Chat extends Component {
   state = {
     messages: [],
     currentUser: {
-      _id: '4',
-      name: 'BBB',
+      _id: '3',
+      name: 'Test',
     },
   };
 
@@ -87,7 +87,7 @@ sendNotification= async(messageText)=>{
     let accessToken=''
         firebase
         .database()
-        .ref('users/'+"3")
+        .ref('users/'+this.props.route.params.userData._id)
         .once('value', snap =>{ 
         console.log("test",snap.val().push_token)
 
@@ -136,10 +136,12 @@ sendNotification= async(messageText)=>{
         user={{
           _id: this.state.currentUser._id,
           name:this.state.currentUser.name,
-          avatar: 'https://placeimg.com/140/140/any'
+          avatar: 'https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450'
         }}
         isTyping={true}
         isLoadingEarlier={true}
+        showAvatarForEveryMessage ={true}
+        showUserAvatar={true}
       />
     );
   }

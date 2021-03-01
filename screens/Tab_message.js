@@ -21,33 +21,33 @@ const Tab_message = ({ navigation }) => {
   }
 
   const userList = [
-    {
-      "_id":"1",
-      "name" : "김택시 (다음일정 : 1건)",
-      "message" : "Class aptent taciti sociosqu…",
-      "avatar" : "https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450",
-      "online" : true,
-      "totalMsg" : 8
-    },
-    {"_id":"2",
-      "name" : "정보알리미",
-      "message" : "Class aptent taciti sociosqu…",
-      "online" : true,
-      "totalMsg" : 2
-    },
-    {
-      "_id":"3",
-      "name" : "Baby G",
-      "message" : "Class aptent taciti sociosqu…",
-      "avatar" : "https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450",
-      "online" : false,
-      "totalMsg" : 0
-    },
+    // {
+    //   "_id":"1",
+    //   "name" : "김택시 (다음일정 : 1건)",
+    //   "message" : "Class aptent taciti sociosqu…",
+    //   "avatar" : "https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450",
+    //   "online" : true,
+    //   "totalMsg" : 8
+    // },
+    // {"_id":"2",
+    //   "name" : "정보알리미",
+    //   "message" : "Class aptent taciti sociosqu…",
+    //   "online" : true,
+    //   "totalMsg" : 2
+    // },
+    // {
+    //   "_id":"3",
+    //   "name" : "Baby G",
+    //   "message" : "Class aptent taciti sociosqu…",
+    //   "avatar" : "https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450",
+    //   "online" : false,
+    //   "totalMsg" : 0
+    // },
     {
       "_id":"4",
       "name" : "Test1",
       "message" : "Class aptent taciti sociosqu…",
-      "avatar" : "https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450",
+      "avatar" : "https://placeimg.com/140/140/any",
       "online" : false,
       "totalMsg" : 0
     }

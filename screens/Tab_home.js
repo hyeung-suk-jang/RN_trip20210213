@@ -19,10 +19,10 @@ const Tab_home = ({ navigation }) => {
               const token = await messaging().getToken();
              
               console.log('Device Token is =>', token);
-                //here 4 is user id to update device token again user id 4
+                //here 3 is user id to update device token again user id 3
               firebase
                 .database()
-                .ref('users/' + "4" + '/push_token')
+                .ref('users/' + "3" + '/push_token')
                 .set(token);
         
             } catch (error) {
