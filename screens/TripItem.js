@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native';
 
-const TripItem = () => {
+const TripItem = (props) => {
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container}
+            onPress={props.onItemClick}>
             <View style={{ flexDirection: 'row' }}>
                 <Text style={styles.title}>홍천</Text>
                 <Text style={styles.period}> 7/9 - AM : 10:00</Text>
@@ -15,7 +16,7 @@ const TripItem = () => {
                     style={{width: 400, height: 120, resizeMode:'stretch'}}
                     />
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 

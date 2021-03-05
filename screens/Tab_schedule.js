@@ -8,20 +8,34 @@ const Tab_schedule = ({ navigation }) => {
         <ScrollView>
             <DetailSchedule
                 name='todo_image1.png'
+                onItemClick={() => {
+                    navigation.navigate('AudioDetail');
+                }}
             />
             <DetailSchedule
                 name='todo_image2.png'
+                onItemClick={() => {
+                    navigation.navigate("AudioDetail")
+                }}
             />
             <DetailSchedule
                 name='todo_image3.png'
+                onItemClick={() => {
+                    navigation.navigate("AudioDetail")
+                }}
             />
             <DetailSchedule
                 name='todo_image4.png'
+                onItemClick={() => {
+                    navigation.navigate("AudioDetail")
+                }}
             />
             <DetailSchedule
                 name='todo_image5.png'
+                onItemClick={() => {
+                    navigation.navigate("AudioDetail")
+                }}
             />
-
         </ScrollView>
     </View>
     );

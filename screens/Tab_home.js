@@ -37,7 +37,11 @@ const Tab_home = ({ navigation }) => {
             barStyle='dark-content'
         />
         <ScrollView>
-            <TripItem />
+            <TripItem 
+                onItemClick={() => {
+                    navigation.navigate("Schedule")
+                }}
+            />
             <TripItem />
             <TripItem />
             <TripItem />
