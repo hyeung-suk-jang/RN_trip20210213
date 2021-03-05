@@ -194,7 +194,6 @@ const App = () => {
                     <View></View>
                   ),
                   }}/> 
-
               <Stack.Screen
                 name="AudioDetail"
                 component={AudioDetail}

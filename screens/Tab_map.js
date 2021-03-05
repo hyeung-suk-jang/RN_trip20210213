@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react';
+import React, {useState, useRef} from 'react';
 import {
   View,
   Text,
@@ -6,17 +6,9 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
-  PermissionsAndroid,
-  Platform,
 } from 'react-native';
 import {Marker} from 'react-native-maps';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
-// import { ShowNotification, CancleNotification } from './notification';
-import PushNotification from 'react-native-push-notification';
-import Geolocation from '@react-native-community/geolocation';
-import Toast from 'react-native-simple-toast';
-import AwesomeAlert from 'react-native-awesome-alerts';
-
 
 //구글맵
 //안드로이드 :  AIzaSyCh1rhthVxqh8jnn2y5Qd-HqDHhQPYbc7E
@@ -51,136 +43,29 @@ import AwesomeAlert from 'react-native-awesome-alerts';
 // In the map :
 
 const Tab_map = ({navigation}) => {
-
-  const [currentLong, setCurrentLong] = useState(127.0309511);
-  const [currentLat, setCurrentLat] = useState(37.5668106);
-  const [locationStatus, setLocationStatus] = useState('');
-  const [isAlert, setIsAlert] = useState(false);
-  const [currentNotifTitle, setCurrentNotifTitle] = useState('');
-  const [currentNotifDesc, setCurrentNotifDesc] = useState('');
-
-  const getOneTimeLocation = () => {
-    Toast.show('Getting Location ...');
-    Geolocation.getCurrentPosition(
-      (position) => {
-        const currentLongitude = position.coords.longitude;
-        const currentLatitude =  position.coords.latitude;
-        console.log(currentLongitude,currentLatitude);
-        Toast.show('Your Live Location : Latitude : '+currentLatitude+" Longitude : "+currentLongitude);
-        setCurrentLong(currentLongitude);
-        setCurrentLat(currentLatitude);
-      },
-      (error) => {
-        Toast.show(error.message);
-      },
-      {
-        enableHighAccuracy: false,
-        timeout: 30000,
-        maximumAge: 1000
-      },
-    );
-  };
-
-  const subscribeLocationLocation = () => {
-    const watchID = Geolocation.watchPosition(
-      (position) => {
-        console.log(position);
-        const currentLongitude = position.coords.longitude;
-        const currentLatitude =  position.coords.latitude;
-        console.log(currentLongitude,currentLatitude);
-        setCurrentLong(currentLongitude);
-        setCurrentLat(currentLatitude);
-      },
-      (error) => {
-        Toast.show(error.message);
-      },
-      {
-        enableHighAccuracy: false,
-        maximumAge: 1000
-      },
-    );
-  };
-
-  const notifyUser = (title,description)=>{
-    PushNotification.localNotification({
-      title: currentNotifTitle,
-      message: currentNotifDesc,
-    });
-    setIsAlert(true);
-    setTimeout(() => setIsAlert(false), 3000);
-  }
-
   return (
-    <View style={ styles.container }>
-      <MapView
-        provider={PROVIDER_GOOGLE}
-        style={{flex: 1}}
-        showsUserLocation={true}
-        initialRegion={{
-          latitude: currentLat,
-          longitude: currentLong,
-          latitudeDelta: 0.5,
-          longitudeDelta: 0.5,
-        }}>
-        <Marker coordinate={{latitude: currentLat , longitude: currentLong}} />
-       </MapView>
-       <View
-          style={{
-            position: 'absolute',
-            alignSelf: 'flex-end',
-            padding: 16,
-            flexDirection : 'row',
-          }}
-        >
-          <TouchableOpacity 
-            style={{ 
-              backgroundColor : 'red', 
-              padding : 8, 
-              marginRight : 8, 
-              fontSize : 14 
-            }}
-            onPress={() => {
-              setCurrentNotifTitle('Notification TItle');
-              setCurrentNotifDesc('Notification Description');
-              notifyUser();
-            }}
-            >
-            <Text style={{ color : 'white' }}>
-            Notification
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity 
-            style={{ 
-              backgroundColor : 'red', 
-              padding : 8, 
-              fontSize : 14 
-            }}
-            onPress={getOneTimeLocation}
-            >
-            <Text style={{ color : 'white' }}>
-            Live
-            </Text>
-          </TouchableOpacity>
-      </View>
-      { isAlert && 
-        <AwesomeAlert
-            show={isAlert}
-            showProgress={false}
-            title={currentNotifTitle}
-            message={currentNotifDesc}
-            closeOnTouchOutside={false}
-            closeOnHardwareBackPress={true}
-            showCancelButton={false}
-            showConfirmButton={false}
-        />
-      }  
-    </View>
+    <MapView
+      provider={PROVIDER_GOOGLE}
+      style={{flex: 1}}
+      initialRegion={{
+        	
+        latitude: 37.5668106,
+        longitude: 127.0309511,
+        latitudeDelta: 0.5,
+        longitudeDelta: 0.5,
+      }}>
+      <Marker coordinate={{latitude:37.5668106 , longitude: 127.0309511}} />
+    </MapView>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
+    fontFamily: 'THEBluewindRegular',
+    alignItems: 'center',
+    backgroundColor: '#41BD40',
   },
 });
 export default Tab_map;
