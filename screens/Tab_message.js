@@ -5,6 +5,7 @@ import Close from '../assets/close';
 import SearchIcon from '../assets/search';
 import auth from '@react-native-firebase/auth';
 import {COLORS} from '../constant/colors';
+import {Header} from '../components/Header';
 
 const Tab_message = ({ navigation }) => {
 
@@ -22,21 +23,31 @@ const Tab_message = ({ navigation }) => {
   }
 
   const userList = [
+    // {
+    //   "_id":"1",
+    //   "name" : "김택시 (다음일정 : 1건)",
+    //   "message" : "Class aptent taciti sociosqu…",
+    //   "avatar" : "https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450",
+    //   "online" : true,
+    //   "totalMsg" : 8
+    // },
+    // {"_id":"2",
+    //   "name" : "정보알리미",
+    //   "message" : "Class aptent taciti sociosqu…",
+    //   "online" : true,
+    //   "totalMsg" : 2
+    // },
+    // {
+    //   "_id":"3",
+    //   "name" : "Baby G",
+    //   "message" : "Class aptent taciti sociosqu…",
+    //   "avatar" : "https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450",
+    //   "online" : false,
+    //   "totalMsg" : 0
+    // },
     {
+      "_id":"4",
       "name" : "김택시 (다음일정 : 1건)",
-      "message" : "Class aptent taciti sociosqu…",
-      "avatar" : "https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450",
-      "online" : true,
-      "totalMsg" : 8
-    },
-    {
-      "name" : "정보알리미",
-      "message" : "Class aptent taciti sociosqu…",
-      "online" : true,
-      "totalMsg" : 2
-    },
-    {
-      "name" : "Baby G",
       "message" : "Class aptent taciti sociosqu…",
       "avatar" : "https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450",
       "online" : false,
@@ -48,14 +59,15 @@ const Tab_message = ({ navigation }) => {
   if (userList.length > 0) {
     renderCards = userList.map((data, key) => {
       return (
-          <View style={styles.mainContainer} 
+       
+          <TouchableOpacity style={styles.mainContainer} 
+            onPress={() => {
+                //console.log(data.name);
+                 navigation.navigate("Chat",{userData:data})
+            }}
           >
-            <TouchableOpacity 
-              style={{width: '20%', flexDirection: 'column', justifyContent : 'center'}}
-              onPress={() => {
-                 navigation.navigate("ChatProfile")
-              }}
-            >
+            
+            <View style={{width: '20%', flexDirection: 'column', justifyContent : 'center'}}>
               <Avatar
                 rounded
                 source={
@@ -83,14 +95,9 @@ const Tab_message = ({ navigation }) => {
                     right: 6,
                   }}
               />
-            </TouchableOpacity>
+            </View>
 
-            <TouchableOpacity 
-              style={{width: '60%'}}
-              onPress={() => {
-                 navigation.navigate("Chat")
-              }}
-            >
+            <View style={{width: '60%'}}>
               <View style={{flexDirection: 'row'}}>
                 <Text style={styles.nameTaxtStyle}>{data.name}</Text>
               </View>
@@ -101,7 +108,7 @@ const Tab_message = ({ navigation }) => {
                 }}>
                 <Text numberOfLines={1}>{data.message}</Text>
               </View>
-            </TouchableOpacity>
+            </View>
 
             <View style={{width: '20%', alignItems: 'center', marginTop : 4 }}>
                 <Text style={{ fontSize : 10 }}>10:00AM</Text>
@@ -119,14 +126,18 @@ const Tab_message = ({ navigation }) => {
                   </View>  
                 }
             </View>
-          </View>
+          </TouchableOpacity>
       );
     });
   }
 
   return (
       <View style={styles.container}>
-
+        <Header title="메시지" 
+        onBackPress={() => {
+                navigation.goBack();
+              }}
+      />
         <View style={styles.mainContainer2}>
             <View style={styles.searchContainer}>
                 <View style={styles.inputContainerStyle}>
@@ -169,7 +180,7 @@ const styles = StyleSheet.create({
   nameTaxtStyle: {
     fontWeight: '500',
     fontSize: 18,
-    color: COLORS.GREY,
+    color: '#14C16B',
   },
   mainContainer2: {
         width: '94%',

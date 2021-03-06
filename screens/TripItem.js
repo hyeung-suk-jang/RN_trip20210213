@@ -6,14 +6,14 @@ const TripItem = (props) => {
         <TouchableOpacity style={styles.container}
             onPress={props.onItemClick}>
             <View style={{ flexDirection: 'row' }}>
-                <Text style={styles.title}>홍천</Text>
-                <Text style={styles.period}> 7/9 - AM : 10:00</Text>
+                <Text style={styles.title}>영월</Text>
+                <Text style={styles.period}> 7/9 오전 9시 출발(3시간)</Text>
             </View>
             <View
-                style={{width: 400, height: 120,}}>
+                style={{width: 400, height: 180,}}>
                 <Image
                     source={require('../assets/image/image1.png')}
-                    style={{width: 400, height: 120, resizeMode:'stretch'}}
+                    style={{width: 400, height: 180, resizeMode:'stretch'}}
                     />
             </View>
         </TouchableOpacity>

@@ -14,15 +14,15 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const SettingLanguage = ({navigation}) => {
   const languages = [
     {
-      language: 'KOREAN',
+      language: '한국어',
       isSelected: false,
     },
     {
-      language: 'ENGLISH',
+      language: 'English',
       isSelected: true,
     },
     {
-      language: 'CHINESE',
+      language: '中文',
       isSelected: false,
     },
   ];
@@ -64,7 +64,7 @@ const SettingLanguage = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header
-        title="language"
+        title="언어설정"
         onBackPress={() => {
           navigation.navigate('Setting');
         }}

@@ -119,8 +119,8 @@ const Tab_map = ({navigation}) => {
         initialRegion={{
           latitude: currentLat,
           longitude: currentLong,
-          latitudeDelta: 0.5,
-          longitudeDelta: 0.5,
+          latitudeDelta: 0.05,
+          longitudeDelta: 0.05,
         }}>
         <Marker coordinate={{latitude: currentLat , longitude: currentLong}} />
        </MapView>
@@ -140,13 +140,13 @@ const Tab_map = ({navigation}) => {
               fontSize : 14 
             }}
             onPress={() => {
-              setCurrentNotifTitle('Notification TItle');
-              setCurrentNotifDesc('Notification Description');
+              setCurrentNotifTitle('로컬푸시 알림');
+              setCurrentNotifDesc('특정 지역에 도착했습니다.');
               notifyUser();
             }}
             >
             <Text style={{ color : 'white' }}>
-            Notification
+            로컬알림
             </Text>
           </TouchableOpacity>
           <TouchableOpacity 
@@ -158,7 +158,7 @@ const Tab_map = ({navigation}) => {
             onPress={getOneTimeLocation}
             >
             <Text style={{ color : 'white' }}>
-            Live
+            현재위치로 이동
             </Text>
           </TouchableOpacity>
       </View>

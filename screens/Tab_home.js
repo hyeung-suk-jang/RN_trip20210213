@@ -5,6 +5,7 @@ import messaging from '@react-native-firebase/messaging';
 import auth from '@react-native-firebase/auth';
 import * as firebase from 'firebase'
 import {firebaseConfig} from '../config/config'
+import {Header} from '../components/Header';
 const Tab_home = ({ navigation }) => {
 
     useEffect(()=>{
@@ -32,10 +33,11 @@ const Tab_home = ({ navigation }) => {
 
     return (
       <View style={styles.container}>
-        <StatusBar
-            backgroundColor='white'
-            barStyle='dark-content'
-        />
+        <Header title="나의 투어일정" 
+        onBackPress={() => {
+                navigation.goBack();
+              }}
+      />
         <ScrollView>
             <TripItem 
                 onItemClick={() => {

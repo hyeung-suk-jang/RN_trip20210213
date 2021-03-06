@@ -23,49 +23,49 @@ const AudioGuideDetail = ({ navigation }) => {
 
 const data = [
     {
-      title: 'City1',
+      title: '고씨동굴1',
       subtitle: 'chapter1',
       isRunning : false,
       time : '02:45',
     },
     {
-      title: 'City2',
+      title: '고씨동굴2',
       subtitle: 'chapter2',
       isRunning : true,
       time : '02:45',
     },
     {
-      title: 'City3',
+      title: '고씨동굴3',
       subtitle: 'chapter3',
       isRunning : false,
       time : '02:45',
     },
     {
-      title: 'City4',
+      title: '고씨동굴4',
       subtitle: 'chapter4',
       isRunning : false,
       time : '02:45',
     },
     {
-      title: 'City1',
+      title: '고씨동굴1',
       subtitle: 'chapter1',
       isRunning : false,
       time : '02:45',
     },
     {
-      title: 'City2',
+      title: '고씨동굴2',
       subtitle: 'chapter2',
       isRunning : true,
       time : '02:45',
     },
     {
-      title: 'City3',
+      title: '고씨동굴3',
       subtitle: 'chapter3',
       isRunning : false,
       time : '02:45',
     },
     {
-      title: 'City4',
+      title: '고씨동굴4',
       subtitle: 'chapter4',
       isRunning : false,
       time : '02:45',
@@ -113,7 +113,7 @@ const data = [
     return (
         <View style={styles.container}>
             <Header 
-                title="city1 audio guide" 
+                title="고씨동굴 오디오가이드" 
                 onBackPress={() => {
                     navigation.goBack();
                 }}
@@ -137,8 +137,8 @@ const data = [
                     <View style={{ alignItems : 'center',flex : 0.2, }}><Text style={styles.sizeText}>05:40</Text></View>
                 </View> 
                 <View style={{ marginBottom : 16, marginTop : -16}}>  
-                <Text style={ styles.audioTitle }>City1</Text>
-                <Text style={ styles.nameTextStyle }>chapter 2</Text>
+                <Text style={ styles.audioTitle }>영월군 고씨시</Text>
+                <Text style={ styles.nameTextStyle }>고씨동굴</Text>
                 </View>
             </View>
         </View>

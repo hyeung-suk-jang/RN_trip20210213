@@ -21,7 +21,7 @@ const SettingReport = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header
-        title="report inconvenience"
+        title="불편신고"
         onBackPress={() => {
           navigation.goBack();
         }}
@@ -29,7 +29,7 @@ const SettingReport = ({navigation}) => {
       <KeyboardAwareScrollView>
         <View style={{marginHorizontal: 16}}>
           <View>
-            <Text style={styles.settingText}>Questions</Text>
+            <Text style={styles.settingText}>문의사항</Text>
             <TextInput
               style={{
                 marginTop: 12,
@@ -44,7 +44,7 @@ const SettingReport = ({navigation}) => {
           </View>
 
           <View style={{marginTop: 12}}>
-            <Text style={styles.settingText}>Reply Email</Text>
+            <Text style={styles.settingText}>답변받을 이메일</Text>
             <TextInput
               style={{
                 marginTop: 12,
@@ -59,7 +59,7 @@ const SettingReport = ({navigation}) => {
           </View>
 
           <View style={{marginTop: 12}}>
-            <Text style={styles.settingText}>Attachmnet</Text>
+            <Text style={styles.settingText}>첨부파일</Text>
             <View
               style={{
                 flexDirection: 'row',
@@ -97,7 +97,7 @@ const SettingReport = ({navigation}) => {
                   color: COLORS.WHITE,
                   fontWeight: 'bold',
                 }}>
-                Send
+                보내기
               </Text>
             </TouchableOpacity>
           </View>

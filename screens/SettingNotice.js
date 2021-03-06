@@ -10,7 +10,7 @@ const SettingNotice = ({navigation}) => {
 
     return (
       <View style={styles.container}>
-        <Header title="notice" 
+        <Header title="공지사항" 
         onBackPress={() => {
                 navigation.goBack();
               }}
@@ -20,7 +20,7 @@ const SettingNotice = ({navigation}) => {
             <TouchableOpacity
               onPress={() => console.log('pressed')}
               style={{marginLeft: 20}}>
-              <Text style={styles.settingText}>2020.08.01 update</Text>
+              <Text style={styles.settingText}>2020.08.01 업데이트</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.saperator} />
@@ -29,7 +29,7 @@ const SettingNotice = ({navigation}) => {
             <TouchableOpacity
               onPress={() => console.log('pressed')}
               style={{marginLeft: 20}}>
-              <Text style={styles.settingText}>2020.08.02 update</Text>
+              <Text style={styles.settingText}>2020.08.02 업데이트</Text>
             </TouchableOpacity>
           </View>
           <View style={styles.saperator} />
@@ -42,7 +42,7 @@ const SettingNotice = ({navigation}) => {
           >
               <View
                 style={{marginLeft: 20}}>
-                <Text style={styles.settingText}>2020.08.03 update</Text>
+                <Text style={styles.settingText}>2020.08.03 업데이트</Text>
               </View>
               <View
                 style={{

@@ -23,10 +23,7 @@ const AudioDetail = ({navigation}) => {
       <StatusBar backgroundColor="white" barStyle="dark-content" />
       <Image
         style={{width: '100%', height: '35%', backgroundColor: COLORS.WHITE}}
-        source={{
-          uri:
-            'https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450',
-        }}
+        source={require('../assets/image/Overlay.png')}
       />
       <View
         style={{
@@ -39,7 +36,7 @@ const AudioDetail = ({navigation}) => {
         <ScrollView style={{flex: 1, marginTop: 24, paddingHorizontal: 16}}>
           <View>
             <View style={{flexDirection: 'row'}}>
-              <Text style={styles.headerText}>City 1</Text>
+              <Text style={styles.headerText}>김삿갓유적지</Text>
               <TouchableOpacity
                 onPress={() => {
                   setIsAudioDetail(!isAudioDetail);
@@ -57,9 +54,9 @@ const AudioDetail = ({navigation}) => {
 
             <View style={{flexDirection: 'row'}}>
               <View>
-                <Text style={styles.nameTextStyle}>address</Text>
+                <Text style={styles.nameTextStyle}>주소</Text>
                 <Text style={styles.responseText}>
-                  150,street,landmark,area,province
+                영월군 김삿갓면 김삿갓로 216-22
                 </Text>
               </View>
               <TouchableOpacity
@@ -83,7 +80,7 @@ const AudioDetail = ({navigation}) => {
 
             <View style={{flexDirection: 'row'}}>
               <View>
-                <Text style={styles.nameTextStyle}>Tell number</Text>
+                <Text style={styles.nameTextStyle}>전화번호</Text>
                 <Text style={styles.responseText}>010-0000-0000</Text>
               </View>
               <TouchableOpacity
@@ -104,9 +101,9 @@ const AudioDetail = ({navigation}) => {
 
             <View style={{flexDirection: 'row'}}>
               <View>
-                <Text style={styles.nameTextStyle}>description</Text>
+                <Text style={styles.nameTextStyle}>한줄설명</Text>
                 <Text style={styles.responseText}>
-                  whatever user want to keep
+                강원도 영월군 난고 김병연(金炳淵)의 유적지
                 </Text>
               </View>
             </View>
@@ -114,21 +111,17 @@ const AudioDetail = ({navigation}) => {
 
             <View style={{flexDirection: 'row'}}>
               <View>
-                <Text style={styles.nameTextStyle}>description</Text>
+                <Text style={styles.nameTextStyle}>상세설명</Text>
                 <Text style={[styles.responseText]}>
-                  The Style has its 2 unique radius property which is used to
-                  make only both top sides corners rounded. This type of
-                  functionality we have seen in many applications and one of the
-                  most popular social chatting platform Hike in India uses this.
-                  So in this tutorial we would going to create a react native
-                  app and set Border radius for only top left right rounded
-                  corners Image View React Native The Style has its 2 unique
-                  radius property which is used to make only both top sides
-                  corners rounded. This type of functionality we have seen in
-                  many applications and one of the most popular social chatting
-                  platform Hike in India uses this. So in this tutorial we would
-                  going to create a react native app and set Border radius for
-                  only top left right rounded corners Image View React Native
+                강원도 영월군 하동면 와석리 노루목에 조성된 난고 김병연(金炳淵)의 유적지. 
+                별호인 김삿갓으로 불리는 난고 김병연(1807~1863)을 기념하는 유적지와 부대시설이 조성되어 있다. 
+                김삿갓 연구자료를 전시하고 있는 난고문학
+                강원도 영월군 하동면 와석리 노루목에 조성된 난고 김병연(金炳淵)의 유적지. 
+                별호인 김삿갓으로 불리는 난고 김병연(1807~1863)을 기념하는 유적지와 부대시설이 조성되어 있다. 
+                김삿갓 연구자료를 전시하고 있는 난고문학
+                강원도 영월군 하동면 와석리 노루목에 조성된 난고 김병연(金炳淵)의 유적지. 
+                별호인 김삿갓으로 불리는 난고 김병연(1807~1863)을 기념하는 유적지와 부대시설이 조성되어 있다. 
+                김삿갓 연구자료를 전시하고 있는 난고문학
                 </Text>
               </View>
             </View>
@@ -169,8 +162,8 @@ const AudioDetail = ({navigation}) => {
               color={COLORS.WHITE}
             />
           </TouchableOpacity>
-          <Text style={[styles.detailText, {flex: 0.23, textAlign: 'center'}]}>
-            City 1
+          <Text style={[styles.detailText, {flex: 0.28, textAlign: 'center'}]}>
+          김삿갓유적지
           </Text>
           <Text style={[styles.sizeText, {flex: 0.11, textAlign: 'center'}]}>
             02:35
@@ -220,7 +213,7 @@ const styles = StyleSheet.create({
     color: COLORS.LIGHTBLACK,
   },
   detailText: {
-    fontSize: 14,
+    fontSize: 16,
     color: COLORS.WHITE,
     fontWeight: 'bold',
     paddingHorizontal: 12,

@@ -45,7 +45,7 @@ const Styles = StyleSheet.create({
   },
   textstyle: {
     color: COLORS.LIGHTBLACK,
-    fontSize: 18,
+    fontSize: 28,
     textTransform: 'uppercase',
     marginLeft : -0.2 * width
   }

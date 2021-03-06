@@ -19,7 +19,7 @@ const Tab_setting = ({navigation}) => {
 
   return (
     <View style={styles.container}>
-      <Header title="settings" 
+      <Header title="설정" 
         onBackPress={() => {
                 navigation.goBack();
               }}
@@ -31,7 +31,7 @@ const Tab_setting = ({navigation}) => {
               navigation.navigate('SettingNotice');
             }}
             style={{marginLeft: 20}}>
-            <Text style={styles.settingText}>notice</Text>
+            <Text style={styles.settingText}>공지사항</Text>
           </TouchableOpacity>
           <View style={styles.saperator} />
 
@@ -40,7 +40,7 @@ const Tab_setting = ({navigation}) => {
               navigation.navigate('SettingLanguage');
             }}
             style={{marginLeft: 20}}>
-            <Text style={styles.settingText}>language</Text>
+            <Text style={styles.settingText}>언어설정</Text>
           </TouchableOpacity>
           <View style={styles.saperator} />
 
@@ -49,7 +49,7 @@ const Tab_setting = ({navigation}) => {
               navigation.navigate('SettingTermsOfServices');
             }}
             style={{marginLeft: 20}}>
-            <Text style={styles.settingText}>terms of service</Text>
+            <Text style={styles.settingText}>이용약관</Text>
           </TouchableOpacity>
           <View style={styles.saperator} />
 
@@ -59,7 +59,7 @@ const Tab_setting = ({navigation}) => {
                 setIsMarketingAgreement(!isMarketingAgreement)
               }}
               style={{marginLeft: 20}}>
-              <Text style={styles.settingText}>margketing agreement</Text>
+              <Text style={styles.settingText}>마케팅 수신동의</Text>
             </TouchableOpacity>
             <View
               style={{
@@ -86,7 +86,7 @@ const Tab_setting = ({navigation}) => {
                 setIsPushNotification(!isPushNotification)
               }}
               style={{marginLeft: 20}}>
-              <Text style={styles.settingText}>push notice</Text>
+              <Text style={styles.settingText}>푸시알림</Text>
             </TouchableOpacity>
             <View
               style={{
@@ -110,7 +110,7 @@ const Tab_setting = ({navigation}) => {
           <TouchableOpacity
             onPress={() => console.log('pressed')}
             style={{marginLeft: 20}}>
-            <Text style={styles.settingText}>logout</Text>
+            <Text style={styles.settingText}>로그아웃</Text>
           </TouchableOpacity>
           <View style={styles.saperator} />
 
@@ -119,7 +119,7 @@ const Tab_setting = ({navigation}) => {
               navigation.navigate('SettingReport');
             }}
             style={{marginLeft: 20}}>
-            <Text style={styles.settingText}>report inconvinience</Text>
+            <Text style={styles.settingText}>불편신고</Text>
           </TouchableOpacity>
           <View style={styles.saperator} />
         </View>

@@ -7,12 +7,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 const SettingTermsOfServices = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Header title='terms of service'
+            <Header title='이용약관'
             onBackPress={() => {
                 navigation.goBack();
               }}/>
             <View style={[styles.viewContainer,styles.boxWithShadow]}>
-                <Text style={[styles.termsText,styles.boxWithShadow]}>latest version : 10 / 07 / 2020</Text>
+                <Text style={[styles.termsText,styles.boxWithShadow]}>최신버전 : 10 / 07 / 2020</Text>
             </View>
             <ScrollView style={{ marginVertical : 20 }}>
                 <View style={{ marginHorizontal : 16 }}>

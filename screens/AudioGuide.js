@@ -80,7 +80,7 @@ const AudioGuide = ({navigation}) => {
           <AntDesignIcon name="arrowleft" size={30} color={COLORS.WHITE} />
         </TouchableOpacity>
         <View style={{ alignItems : 'center', flex : 1 , width : width * 0.8 }}>
-          <Text style={styles.headerText}>AUDIO GUIDE</Text>
+          <Text style={styles.headerText}>오디오 가이드</Text>
         </View>  
       </View>
 
@@ -104,9 +104,7 @@ const AudioGuide = ({navigation}) => {
               <View style={{ backgroundColor : COLORS.WHITE,alignItems : 'center', borderRadius : 12 }}>
                 <Image
                   style={{ height : 200, width : 200, borderRadius : 16 }}
-                  source={{
-                    uri: "https://imgk.timesnownews.com/story/environment-iStock-489644415.jpg?tr=w-600,h-450",
-                  }}
+                  source={require('../assets/image/donggul.png')}
                 />
               </View>
           ) : (
@@ -124,8 +122,8 @@ const AudioGuide = ({navigation}) => {
           
       </View>
 
-      <Text style={styles.audioTitle}>City1</Text>
-      <Text style={styles.nameTextStyle}>1/1 audio file</Text>
+      <Text style={styles.audioTitle}>고씨동굴</Text>
+      <Text style={styles.nameTextStyle}>1/3 오디오가이드</Text>
       <View style={{marginHorizontal: 32, marginTop: 16}}>
         <View style={{flexDirection: 'row'}}>
           <Text style={{fontSize: 12, color: COLORS.GREY}}>00:00</Text>
@@ -175,7 +173,7 @@ const AudioGuide = ({navigation}) => {
             color={COLORS.WHITE}
           />
         </TouchableOpacity>
-        <Text style={styles.detailText}>City 1</Text>
+        <Text style={styles.detailText}>고씨동굴</Text>
         <Text style={styles.sizeText}>02:35</Text>
         <TouchableOpacity>
           <Icon
@@ -223,7 +221,7 @@ const styles = StyleSheet.create({
     borderBottomRightRadius: 30,
   },
   headerText: {
-    fontSize: 20,
+    fontSize: 28,
     textAlign: 'center',
     color: COLORS.WHITE,
     fontWeight: 'bold',
